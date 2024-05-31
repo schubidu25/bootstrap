@@ -1,15 +1,21 @@
 - name: Initialize fast calculator machine
   hosts: localhost
-  # connection: local
+  connection: local
   tasks:
     - name: Update Homebrew and upgrade all packages
       community.general.homebrew:
-      update_homebrew: true
-      upgrade_all: true
+        update_homebrew: true
+        upgrade_all: true
 
     - name: Install Homebrew formulae
       community.general.homebrew:
         name:
           - fish
           - starship
+        state: present
+
+    - name: Install Homebrew casks
+      community.general.homebrew_cask:
+        name:
+          - wezterm
         state: present
