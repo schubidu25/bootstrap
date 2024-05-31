@@ -1,6 +1,5 @@
 - name: Initialize fast calculator machine
   hosts: localhost
-  connection: local
   tasks:
     - name: Update Homebrew and upgrade all packages
       community.general.homebrew:
