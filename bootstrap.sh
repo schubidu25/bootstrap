@@ -32,7 +32,7 @@ else
     /usr/local/bin/brew install ansible
 
     # echo "$me: Download Ansible playbook ...""
-    echo "$me: Create Ansible playbook ...""
+    echo "$me: Create Ansible playbook ..."
 
   fi
 fi
