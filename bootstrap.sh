@@ -1,6 +1,7 @@
 #! /bin/bash
 
 me=$(basename $0)
+dir=$(dirname -- "$( readlink -f -- "$0"; )")
 
 brew="$(command -v brewx)"
 if [ -x "$brew" ]; then
@@ -31,8 +32,8 @@ else
     # /opt/homebrew/bin/brew install ansible
     /usr/local/bin/brew install ansible
 
-    # echo "$me: Download Ansible playbook ...""
-    echo "$me: Create Ansible playbook ..."
+    echo "$me: Run Ansible playbook ..."
+    /bin/bash -c "ansible-playbook -v $dir/playbook.yaml"
 
   fi
 fi
