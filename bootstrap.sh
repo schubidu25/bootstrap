@@ -1,5 +1,6 @@
 #! /bin/bash
 
+echo ""
 echo "**********************************************"
 echo "* DANGER: DON'T CALL THIS SCRIPT WITH SUDO!  *"
 echo "*                                            *"
@@ -12,7 +13,7 @@ echo ""
 me=$(basename $0)
 dir=$(dirname -- "$( readlink -f -- "$0"; )")
 
-brew="$(command -v brewx)"
+brew="$(command -v brew)"
 if [ -x "$brew" ]; then
   echo "$me: Hombrew is already installed: $brew"
 
