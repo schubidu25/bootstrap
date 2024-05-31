@@ -1,5 +1,14 @@
 #! /bin/bash
 
+echo "**********************************************"
+echo "* DANGER: DON'T CALL THIS SCRIPT WITH SUDO!  *"
+echo "*                                            *"
+echo "* BUT:                                       *"
+echo "* A SUDO SESSION MUST BE ACTIVE FOR HOMEBREW *"
+echo "* TO BE INSTALLED.                           *"
+echo "**********************************************"
+echo ""
+
 me=$(basename $0)
 dir=$(dirname -- "$( readlink -f -- "$0"; )")
 
