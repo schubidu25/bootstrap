@@ -17,4 +17,18 @@
       community.general.homebrew_cask:
         name:
           - wezterm
+          - font-jetbrains-mono-nerd-font # ~/Library/Fonts
+          - font-symbols-only-nerd-font # ~/Library/Fonts
         state: present
+
+    - name: Create a config directory for wezterm if it does not exist
+      ansible.builtin.file:
+        path: "{{ lookup('env', 'HOME') }}/.config/wezterm"
+        state: directory
+        mode: "0755"
+
+    - name: Copy wezterm config
+      ansible.builtin.copy:
+        src: "{{ lookup('env', 'HOME') }}/.bootstrap/config/wezterm.lua"
+        dest: "{{ lookup('env', 'HOME') }}/.config/wezterm/wezterm.lua"
+        force: true # replace when destination file exists and files are different
